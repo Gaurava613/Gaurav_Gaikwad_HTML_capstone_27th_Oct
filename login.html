@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<style>
+    .dataImg img {
+        height: 4rem;
+        width: 4rem;
+        /* object-fit: cover; */
+        border-radius: 100%;
+    }
+    .buyMainSec{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        /* background: rebeccapurple; */
+        padding: 10px;
+    }
+
+    .mainProducts{
+        padding: 5px;
+    }
+
+    .allData {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* justify-content: space-between; */
+        gap: 30px;
+        font-size: 1.3rem;
+        background: rgb(217, 217, 217);
+        padding: 20px;
+    }
+    .bookTableCard{
+        /* background: blue; */
+    }
+    .bookNowBtn button{
+        padding: 10px;
+        border: none;
+        width: 100%;
+        height: 4rem;
+        border-radius: 5px;
+        font-size: 2rem;
+        background: #E57435;
+        color: white;
+        cursor: pointer;
+    }
+    .totalBookingPrice{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        background: rgb(162, 162, 162);
+        padding: 30px;
+        font-size: 1.2rem;
+    }
+</style>
+
+<body>
+
+    <section class="bookTableSec">
+        <div class="bookTable">
+            <div class="bookTableCard">
+
+                <div class="allInputsSec">
+                    <div class="inpSec">
+                        <label for="name"> Phone</label>
+                        <input type="text" name="" id="uemail">
+                    </div>
+
+                    <div class="inpSec">
+                        <label for="phone">First Name</label>
+                        <input type="password" name="" id="password">
+                    </div>
+
+                    <div class="inpSec">
+                        <label for="phone">Last Name</label>
+                        <input type="password" name="" id="password">
+                    </div>
+
+                    <div class="inpSec">
+                        <label for="phone">Email</label>
+                        <input type="password" name="" id="password">
+                    </div>
+
+                    <div class="inpSec">
+                        <label for="phone">Address</label>
+                        <input type="password" name="" id="password">
+                    </div>
+
+                    <div id="subTn"><button id="sum_data" onclick="checkData()">PLACE ORDER</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="confirmBuyNowSec">
+                <div class="buyfinalSec">
+                    <div class="buyMainSec">
+                        <div class="mainProducts">
+                        <div class="allData">
+                            <div class="dataImg">
+                                <img src="images/wrogn.png" alt="">
+                            </div>
+                            <div class="dataName"> Pure Cotton Casual Shirt</div>
+                            <div class="dataPrice">
+                                $ 69.95 USD
+                            </div>
+                        </div>
+                        <div class="allData">
+                            <div class="dataImg">
+                                <img src="images/wrogn.png" alt="">
+                            </div>
+                            <div class="dataName"> Pure Cotton Casual Shirt</div>
+                            <div class="dataPrice">
+                                $ 69.95 USD
+                            </div>
+                        </div>
+                         <div class="allData">
+                            <div class="dataImg">
+                                <img src="images/wrogn.png" alt="">
+                            </div>
+                            <div class="dataName"> Pure Cotton Casual Shirt</div>
+                            <div class="dataPrice">
+                                $ 69.95 USD
+                            </div>
+                        </div>
+                    
+                        <div class="totalBookingPrice">
+                            <div class="bookingTotalText">
+                             <B>BOOKING TOTAL</B>
+                            </div>
+                            <div class="bookingTotalPrice">
+                               <B> USD $ 12000/-</B>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="bookNowBtn">
+                      <a href="index.html">  <button href="index.html"> COMPLETE  BOOKING</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="main.js"></script>
+
+</html>

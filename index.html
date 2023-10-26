@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .mainImg img {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .mainBodyContent {
+        /* background: red; */
+        padding: 8rem 20px;
+    }
+
+    .shopSec {
+        /* background: gray; */
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px 10px;
+        padding-left: 50px;
+        /* display: flex; */
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        /* padding: 10px; */
+        background: rgb(219, 214, 214);
+        /* justify-content: center;
+            align-items: center; */
+        /* border-radius: 5px; */
+    }
+
+
+    .saleMain {
+        padding: 10px 10px 60px 10px;
+    }
+
+    .saleSec {
+        background: orange;
+        width: fit-content;
+        padding: 5px 13px;
+        border-radius: 100px;
+        position: absolute;
+        /* z-index: 9000; */
+
+    }
+
+    .imgSec {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .imgSec img {
+        height: 20rem;
+        width: 17rem;
+        /* object-fit: cover; */
+    }
+
+    .prcingSec {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding-top: 5px;
+    }
+
+    .productName {
+        font-size: 1.2rem;
+        padding-top: 5px;
+    }
+
+    .mainPrice {
+        text-decoration: line-through;
+        color: gray;
+        font-size: 0.8rem;
+    }
+
+    .productDetail {
+        color: gray;
+        font-size: 0.9rem;
+    }
+</style>
+
+<body>
+    <header>
+
+        <!-- ////////////////////------NAVBAR ----//////////////////////////////////// -->
+        <div class="bgimg">
+
+        </div>
+        <div class="navbar">
+            <h1>
+                <!-- <div class="logo"><a herf="index.html"><img src="images/Be_FoDDIE-removebg-preview.png" alt=""> </a></div> -->
+            </h1>
+            <ul class="links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menue.html">MENU</a></li>
+                <li><a href="privew.html">ABOUT US</a></li>
+                <li><a href="cart.html">CONTACT </a></li>
+
+            </ul>
+            <a href="login.html" id="user"><i class="fa-solid fa-circle-user"></i></a>
+
+            <!-- <a href="#" class="action_btn"><i class="fa-solid fa-circle-user"></i></a> -->
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menue.html">MENU</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT </a></li>
+            <div class="nav_btn">
+                <button id="book_table_btn"><b><a href="login.html" style="color: white;"> BOOK TABLE</a></b></button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ////////XXX//////////------NAVBAR ----////////////XXX/////////////////// -->
+
+
+
+    <!-- ////////////////////------MAIN IMAGE ----//////////////////////////////////// -->
+
+
+    <div class="mainImgSec">
+        <div class="mainImg">
+            <img src="images/mainImg.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- ////////XXX//////////------MAIN IMAGE----////////////XXX/////////////////// -->
+
+
+    <!-- ////////////////////------MAIN ----//////////////////////////////////// -->
+
+
+
+    <div class="mainBody">
+        <div class="mainBodyContent">
+            <div class="shopSec">
+
+                <div class="products">
+                    <div class="imgSec">
+                            <div class="saleSec">
+                                <b>SALE</b>
+                            </div>
+                        
+                        <img src="images/wrogn.png" alt="">
+                    </div>
+                    <div class="productName">
+                        <b> WROGN</b>
+                    </div>
+                    <div class="productDetail">
+                        Pure Cotton Casual Shirt
+                    </div>
+                    <div class="prcingSec">
+                        <div class="discountPrice">
+                            $ 69.95 USD
+                        </div>
+                        <div class="mainPrice">
+                            $ 88.95 USD
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+                        <img src="images/wrogn1.png" alt="">
+                    </div>
+                    <div class="productName">
+                        <b> Roadster</b>
+                    </div>
+                    <div class="productDetail">
+                        Slim Fit Striped Casual Shirt
+                    </div>
+                    <div class="prcingSec">
+                        <div class="discountPrice">
+                            $ 69.95 USD
+                        </div>
+                        <div class="mainPrice">
+                            $ 88.95 USD
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+                        <img src="images/wrogn2.png" alt="">
+                    </div>
+                    <div class="productName">
+                        <b> H&M</b>
+                    </div>
+                    <div class="productDetail">
+                        Pure Cotton Printed Shirt </div>
+                    <div class="prcingSec">
+                        <div class="discountPrice">
+                            $ 69.95 USD
+                        </div>
+                        <div class="mainPrice">
+                            $ 88.95 USD
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+                        <img src="images/wrogn3.png" alt="">
+                    </div>
+                    <div class="productName">
+                        <b> U.S.Polo Assn.</b>
+                    </div>
+                    <div class="productDetail">
+                        Slim Fit Cotton Casual Shirt
+                    </div>
+                    <div class="prcingSec">
+                        <div class="discountPrice">
+                            $ 69.95 USD
+                        </div>
+                        <div class="mainPrice">
+                            $ 88.95 USD
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+                        <img src="images/wrogn5.png" alt="">
+                    </div>
+                    <div class="productName">
+                        <b> THE BEAR HOUSE</b>
+                    </div>
+                    <div class="productDetail">
+                        Pure Cotton Casual Shirt
+                    </div>
+                    <div class="prcingSec">
+                        <div class="discountPrice">
+                            $ 69.95 USD
+                        </div>
+                        <div class="mainPrice">
+                            $ 88.95 USD
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////XXX//////////------MAIN ----////////////XXX/////////////////// -->
+
+
+
+</body>
+<script>
+
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownmenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+        dropDownmenu.classList.toggle('open')
+        const isOpen = dropDownmenu.classList.contains('open')
+        toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+    }
+</script>
+
+</html>
