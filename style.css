@@ -93,7 +93,7 @@ header {
     top: 60px;
     height: 0;
     width: 300px;
-    background: rgba(188, 228, 187, 0.43);
+    background: rgba(207, 226, 228, 0.43);
     backdrop-filter: blur(60px);
     border-radius: 10px;
     overflow: hidden;
@@ -102,7 +102,7 @@ header {
 
 .dropdown_menu a {
     text-decoration: none;
-    color: #106512;
+    color: #000000;
 }
 
 .dropdown_menu.open a:hover {
@@ -110,7 +110,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 290px;
+    height: 200px;
 }
 
 .dropdown_menu li {
@@ -195,3 +195,242 @@ header {
         width: unset;
     }
 }
+
+
+/* ===================== PRODUCT DETAIL SECTION =========================== */
+
+
+.productDetails{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.productAllDetails{
+    /* background: red; */
+    margin-top: -5rem;
+}
+
+
+#modelContet{
+    background: rgb(223, 222, 222);    margin: 15% auto;
+    padding: 15px;
+    /* border: 1px solid #888; */
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    height: fit-content;
+
+    /* 
+    
+    width: 130vh;
+    padding: 15px;
+    */
+    border-radius: 5px;       
+     /* box-shadow: rgb(163, 161, 161) 1px 1px 30px 1px; */
+
+}
+#detailProductPaddingContent{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+#detailImgSec img{
+    height: 35rem;
+    width: 27rem;   
+}
+#detailNameSec{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 1rem;
+}
+#detailBrandName{
+    font-size: 2rem;
+}
+#detailProductName{
+    font-size: 1.4rem;
+    color: rgb(78, 75, 75);
+}
+#detialProductDescription{
+    font-size: 1.2rem;
+    color: gray;
+
+}
+#detailProductPrice{
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: rgb(71, 71, 70);
+
+}
+.productDetailMainPrice{
+    text-decoration: line-through;
+
+}
+#cartBtn{
+    padding: 20px 50px;
+        /* font-size: 2rem; */
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        background: rgb(232, 86, 8);
+        color: rgb(216, 215, 215);
+}
+
+
+ /* ================================================================ */
+ .footerr{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #bbbbbb;
+}
+    footer{
+        /* margin-top: 50%; */
+    display: flex;
+width: 100%;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: #2d2e33;
+    padding: 60px 10%;
+}
+footer ul{
+    
+    list-style: none;
+    word-spacing: 10%;
+}
+.footer-col{
+    width: 25%;
+    /* height: 100%; */
+    flex-direction: column;
+}
+.footer-col h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    color: #f1bc0d;
+    text-transform: capitalize;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color: #27c0ac;
+    height:2px;
+width: 40px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a{
+    display: block;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: #bdb6b6;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.footer-col ul li a:hover{
+color: white;
+padding-left: 2px;
+}
+.footer-col .f-links a{
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    color: white;
+    background-color: rgba(40,130,214,0.8);
+    margin: 0 8px 8px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+.footer-col .f-links a:hover{
+    color: #4d4f55;
+    background-color: white;
+}
+@media(max-width:740px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-col h4::before{
+        all:unset;
+    }
+}
+
+@media(max-width: 555px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+.mapBox{
+    position: relative;
+    margin-left: 70%; margin-bottom: 0;
+    height: 300px;
+    width: 600px;
+    background: #fff;
+    display: flex;
+}
+.mapBox iframe{
+width: 100%;
+height: 100%;}
+
+@media(max-width:740px){
+    .mapBox{
+        margin-left: 60%;
+        height: 200px;
+        width: 400px;
+       
+    }
+}
+@media(max-width: 555px){
+    .mapBox{
+        margin-left: 0%;
+        height: 200px;
+        width: 400px;    }
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

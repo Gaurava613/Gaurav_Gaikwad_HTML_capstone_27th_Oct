@@ -1,0 +1,142 @@
+
+body{
+    font-family: sans-serif;
+}
+/* =============  CARTS SECTION ============ */
+/* .allCartIsHere{
+    background: rgb(195, 15, 15);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+} */
+#allCarts{
+    background: rgb(228, 227, 227);
+    padding: 20px 30px;
+    border-radius: 10px;
+display: flex;
+gap: 5rem;
+align-items: center;
+}
+#cartForImg img{
+    height: 7rem;
+    width: 7rem;
+}
+#cartImg{
+    border-radius: 100% ;
+}
+#cartForBrand{
+    font-size: 2rem
+}
+#cartForName{
+    font-size: 1.5rem;
+}
+#cartForPrice{
+    font-size: 2.5rem;
+}
+#removeCart{
+    font-size: 3rem;
+    color: white;
+    background: rgb(185, 182, 182);
+    padding: 10px 25px;
+    border-radius: 100%;
+}
+
+#allCartsUl{
+    /* width: 10px; */
+    background: rgb(212, 212, 212);
+   display: flex; 
+   gap: 20px;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 1.3rem;
+   padding: 10px;
+   list-style: none;
+   border-radius: 10px;
+   /* height: 10px; */
+}
+#productImgLi img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 100%;
+}
+#allCartsUl span{
+background: rgb(189, 185, 185);
+color: white;
+font-size: 2rem;
+padding: 5px 14px;
+border-radius: 100%;
+}
+#allCartsUl span:hover{
+color: rgb(18, 18, 18);
+cursor: pointer;
+}
+
+.cartSection1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cartSecTotal {
+    display: flex;
+    justify-content: center;
+}
+
+#cartTotal {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.cartNameSec{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 3rem;
+    background: rgb(188, 188, 188);
+    padding: 12px;
+}
+#completeBookingSec button{
+    background: rgb(255, 145, 0);
+    color: white;
+    padding: 1rem 6.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clickForCompeletBooking{
+    cursor: pointer;
+}
+
+@media(max-width:540px){
+  
+    #completeBookingSec button{
+        background: rgb(255, 145, 0);
+        color: white;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #allCartsUl{
+        /* width: 10px; */
+        background: rgb(212, 212, 212);
+       display: flex; 
+       gap: 20px;
+       justify-content: space-between;
+       align-items: center;
+       font-size: 0.7rem;
+       padding: 10px;
+       list-style: none;
+       border-radius: 10px;
+       /* height: 10px; */
+    }
+}

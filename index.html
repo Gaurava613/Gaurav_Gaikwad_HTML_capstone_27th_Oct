@@ -30,19 +30,22 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 20px 10px;
-        padding-left: 50px;
+        /* padding-left: 50px; */
         /* display: flex; */
     }
+    
+   
 
     .products {
         display: flex;
         flex-direction: column;
         width: fit-content;
-        /* padding: 10px; */
-        background: rgb(219, 214, 214);
-        /* justify-content: center;
-            align-items: center; */
-        /* border-radius: 5px; */
+        cursor: pointer;
+        background: rgb(219, 214, 214);       
+    }
+
+    .productCardDetails {
+        padding: 5px;
     }
 
 
@@ -94,6 +97,120 @@
         color: gray;
         font-size: 0.9rem;
     }
+
+    button{
+        cursor: pointer;
+    }
+    @media(max-width:1280px){
+        .shopSec {
+        grid-template-columns: repeat(4, 1fr);
+       
+    }
+    }
+    @media(max-width:1024px){
+        .shopSec {
+        grid-template-columns: repeat(3, 1fr);
+       
+    }
+    }
+    @media(max-width:768px){
+        .shopSec {
+        grid-template-columns: repeat(3, 1fr);
+        padding-left: 0px;
+    }
+    .products {
+        display: flex;
+        flex-direction: column;
+        /* width: 3rem; */
+        cursor: pointer;
+        background: rgb(223, 220, 220);       
+    }
+    .imgSec img {
+        height: 13rem;
+        width: 10rem;
+    }
+    .discountPrice ,.mainPrice {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding-top: 5px;
+        font-size: 0.7rem;
+    }
+    .productName{
+        font-size: 0.8rem;
+    }
+
+    }
+    @media(max-width:430px){
+        .shopSec {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 0px;
+    }
+    .products {
+        display: flex;
+        flex-direction: column;
+        /* width: 3rem; */
+        cursor: pointer;
+        background: rgb(223, 220, 220);       
+    }
+    .imgSec img {
+        height: 13rem;
+        width: 10rem;
+    }
+    .discountPrice ,.mainPrice {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding-top: 5px;
+        font-size: 0.7rem;
+    }
+    .productName{
+        font-size: 0.8rem;
+    }
+    }
+
+
+    /* ====================== */
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 60%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .cartSection1{
+        display: none;
+    }
+
 </style>
 
 <body>
@@ -109,12 +226,13 @@
             </h1>
             <ul class="links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="menue.html">MENU</a></li>
-                <li><a href="privew.html">ABOUT US</a></li>
-                <li><a href="cart.html">CONTACT </a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                       <li><a href="contact.html">CONTACT  </a></li>
+
+
 
             </ul>
-            <a href="login.html" id="user"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="cart.html" id="user"><i class="fa-solid fa-cart-plus"></i></a>
 
             <!-- <a href="#" class="action_btn"><i class="fa-solid fa-circle-user"></i></a> -->
             <div class="toggle_btn">
@@ -125,12 +243,8 @@
 
         <div class="dropdown_menu">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="menue.html">MENU</a></li>
-            <li><a href="about.html">ABOUT US</a></li>
-            <li><a href="contact.html">CONTACT </a></li>
-            <div class="nav_btn">
-                <button id="book_table_btn"><b><a href="login.html" style="color: white;"> BOOK TABLE</a></b></button>
-            </div>
+            <li><a href="aboutUs.html">ABOUT US</a></li>  
+            <li><a href="contact.html">CONTACT  </a></li>
         </div>
     </header>
 
@@ -159,131 +273,886 @@
         <div class="mainBodyContent">
             <div class="shopSec">
 
-                <div class="products">
+                <div class="products" id="product" onclick="productDetails('product1')">
                     <div class="imgSec">
-                            <div class="saleSec">
-                                <b>SALE</b>
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b> WROGN</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
                             </div>
-                        
-                        <img src="images/wrogn.png" alt="">
-                    </div>
-                    <div class="productName">
-                        <b> WROGN</b>
-                    </div>
-                    <div class="productDetail">
-                        Pure Cotton Casual Shirt
-                    </div>
-                    <div class="prcingSec">
-                        <div class="discountPrice">
-                            $ 69.95 USD
-                        </div>
-                        <div class="mainPrice">
-                            $ 88.95 USD
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
                         </div>
                     </div>
                 </div>
-
-                <div class="products">
+                <div class="products" id="product" onclick="productDetails('product2')">
                     <div class="imgSec">
                         <div class="saleSec">
                             <b>SALE</b>
                         </div>
-                        <img src="images/wrogn1.png" alt="">
+
+                        <img src="images/wrogn1.png" alt="" id="mainProductImg">
                     </div>
-                    <div class="productName">
-                        <b> Roadster</b>
-                    </div>
-                    <div class="productDetail">
-                        Slim Fit Striped Casual Shirt
-                    </div>
-                    <div class="prcingSec">
-                        <div class="discountPrice">
-                            $ 69.95 USD
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>U.S.POLO</b>
                         </div>
-                        <div class="mainPrice">
-                            $ 88.95 USD
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 79.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="products">
+
+
+                <div class="products" id="product" onclick="productDetails('product3')">
                     <div class="imgSec">
                         <div class="saleSec">
                             <b>SALE</b>
                         </div>
-                        <img src="images/wrogn2.png" alt="">
+
+                        <img src="images/wrogn3.png" alt="" id="mainProductImg">
                     </div>
-                    <div class="productName">
-                        <b> H&M</b>
-                    </div>
-                    <div class="productDetail">
-                        Pure Cotton Printed Shirt </div>
-                    <div class="prcingSec">
-                        <div class="discountPrice">
-                            $ 69.95 USD
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>PARX</b>
                         </div>
-                        <div class="mainPrice">
-                            $ 88.95 USD
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 69.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="products">
+                <div class="products" id="product" onclick="productDetails('product4')">
                     <div class="imgSec">
-                        <div class="saleSec">
+                        <!-- <div class="saleSec">
                             <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
                         </div>
-                        <img src="images/wrogn3.png" alt="">
-                    </div>
-                    <div class="productName">
-                        <b> U.S.Polo Assn.</b>
-                    </div>
-                    <div class="productDetail">
-                        Slim Fit Cotton Casual Shirt
-                    </div>
-                    <div class="prcingSec">
-                        <div class="discountPrice">
-                            $ 69.95 USD
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
                         </div>
-                        <div class="mainPrice">
-                            $ 88.95 USD
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
-                <div class="products">
+                <div class="products" id="product" onclick="productDetails('product5')">
                     <div class="imgSec">
                         <div class="saleSec">
                             <b>SALE</b>
                         </div>
-                        <img src="images/wrogn5.png" alt="">
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
                     </div>
-                    <div class="productName">
-                        <b> THE BEAR HOUSE</b>
-                    </div>
-                    <div class="productDetail">
-                        Pure Cotton Casual Shirt
-                    </div>
-                    <div class="prcingSec">
-                        <div class="discountPrice">
-                            $ 69.95 USD
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
                         </div>
-                        <div class="mainPrice">
-                            $ 88.95 USD
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="products" id="product" onclick="productDetails('product1')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b> WROGN</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="products" id="product" onclick="productDetails('product2')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn1.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>U.S.POLO</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 79.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="products" id="product" onclick="productDetails('product3')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn3.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>PARX</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 69.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="products" id="product" onclick="productDetails('product1')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b> WROGN</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="products" id="product" onclick="productDetails('product2')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn1.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>U.S.POLO</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 79.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="products" id="product" onclick="productDetails('product3')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn3.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>PARX</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 69.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="products" id="product" onclick="productDetails('product1')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b> WROGN</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="products" id="product" onclick="productDetails('product2')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn1.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>U.S.POLO</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 79.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="products" id="product" onclick="productDetails('product3')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn3.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>PARX</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 69.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="products" id="product" onclick="productDetails('product4')">
+                    <div class="imgSec">
+                        <!-- <div class="saleSec">
+                            <b>SALE</b>
+                        </div> -->
+
+                        <img src="images/wrogn5.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>ARROW</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <!-- <div class="mainPrice">
+                                $ 88.95 USD
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products" id="product" onclick="productDetails('product5')">
+                    <div class="imgSec">
+                        <div class="saleSec">
+                            <b>SALE</b>
+                        </div>
+
+                        <img src="images/wrogn2.png" alt="" id="mainProductImg">
+                    </div>
+                    <div class="productCardDetails">
+                        <div class="brandName" id="brandName">
+                            <b>A/X</b>
+                        </div>
+                        <div class="productName" id="productName">
+                            Pure Cotton Casual Shirt
+                        </div>
+                        <div class="prcingSec">
+                            <div class="discountPrice">
+                                $ 89.95 USD
+                            </div>
+                            <div class="mainPrice">
+                                $ 88.95 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+                <div class="productDetails" id="productDetails">
+                    <div class="productAllDetails">
+                        <div id="modelContet">
+
+                            <div id="detailImgSec">
+                                <img src="images/wrogn.png" alt="" id="detailImg">
+                            </div>
+                            <div id="ProductDetailContent">
+                                <div id="detailNameSec">
+                                    <div id="detailBrandName">
+                                        <b> WROGN </b>
+                                    </div>
+
+                                    <div id="detailProductName">
+                                        Slim Fit Cotton Casual Shirt
+                                    </div>
+                                    <div id="detailProductPaddingContent">
+                                        <div id="detialProductDescription">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+                                            provident nisi eius ipsam, voluptates excepturi totam optio, explicabo quasi
+                                            tenetur iure id libero voluptatum pariatur dicta eum architecto nihil quo!
+                                        </div>
+
+                                        <div id="detailProductPrice">
+                                            <div class="productDetailDiscountPrice" id="productDetailDiscountPrice">
+                                                $ 69.95 USD
+                                            </div>
+                                            <div class="productDetailMainPrice" id="productDetailMainPrice">
+                                                $ 88.95 USD
+                                            </div>
+                                        </div>
+                                        <div id="detailProductColor">
+                                            this is colors
+                                        </div>
+                                        <div id="detailProductAddToCartSec">
+                                            <div id="AddToCartSec">
+                                                <Button id="cartBtn" onclick="addtocartproduct()">ADD TO CART</Button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div id="productDetailCloseBtn">
+                                <span class="close" onclick="closeProductDetails()">&times;</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
 
             </div>
         </div>
     </div>
 
-    <!-- ////////XXX//////////------MAIN ----////////////XXX/////////////////// -->
+    <footer>
+
+        <div class="footer-col">
+            <h4>products</h4>
+            <ul>
+                <li><a href="#">Shirt</a></li>
+                <li><a href="#">T-Shirt</a></li>
+                <li><a href="#">Belt</a></li>
+                <li><a href="#">Shoes</a></li>
+
+
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Loaction</h4>
+            <ul>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Jaipur</a></li>
+                <li><a href="#">Delhi</a></li>
+                <li><a href="#">Haidrabad</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">service</a></li>
+                <li><a href="#">contact us</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="f-links">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+
+                <a href=""><i class="fa-brands fa-linkedin"></i></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="mapBox">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.30067206293!2d73.0014603!3d19.213891949999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8fcfe76fd59%3A0xcf367d85f7c50283!2sThane%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1687954748726!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+    </footer>
+
+
+    <div class="cartSection1">
+       <div class="cartNameSec">
+        CART SECTION
+       </div>
+        <div class="allCartIsHere" id="allCartIsHere">
+
+        </div>
+
+        <div id="completeBookingSec">
+            <button>COMPLETE  BOOKING</button>
+        </div>
+
+      
+    </div>
+
+
+
+
+    <!-- ////////XXX//////////------MAIN ----//////////XXX/////////////////// -->
 
 
 
 </body>
+<script src="main.js"></script>
 <script>
 
     const toggleBtn = document.querySelector('.toggle_btn')
@@ -297,6 +1166,118 @@
             ? 'fa-solid fa-xmark'
             : 'fa-solid fa-bars'
     }
+
+   
+    function closeProductDetails() {
+        const detailPage = document.getElementById('productDetails')
+        detailPage.style = 'display:none'
+    }
+
+    function productDetails(productImg) {
+        const productDetails = document.getElementById('productDetails')
+        const detailImg = document.getElementById('detailImg')
+        const detailBrandName = document.getElementById('detailBrandName')
+
+        productDetails.style = 'display:flex'
+        const mainProductImg = document.getElementById('mainProductImg')
+        const brandName = document.getElementById('brandName')
+        if (productImg === 'product1') {
+            detailImg.src = "images/wrogn.png"
+            detailBrandName.innerHTML = ' <b>WGN</b>'
+        }
+        else if (productImg === 'product2') {
+            detailImg.src = "images/wrogn1.png"
+            detailBrandName.innerHTML = '<b> WROGN</b>'
+        }
+        else if (productImg === 'product3') {
+            detailImg.src = "images/wrogn3.png"
+            detailBrandName.innerHTML = '<b>PARX</b>'
+        }
+        else if (productImg === 'product4') {
+            detailImg.src = "images/wrogn5.png"
+            detailBrandName.innerHTML = '<b>ARROW</b>'
+        }
+        else if (productImg === 'product5') {
+            detailImg.src = "images/wrogn2.png"
+            detailBrandName.innerHTML = '<b>A/X</b>'
+        }
+
+    }
+
+    function closeProductDetails() {
+        const detailPage = document.getElementById('productDetails')
+        detailPage.style = 'display:none'
+    }
+
+
+    function addtocartproduct() {
+
+        const allCartsUl = document.createElement('UL')
+        const allCartIsHere = document.getElementById('allCartIsHere')
+        allCartsUl.setAttribute('id', 'allCartsUl')
+        allCartIsHere.appendChild(allCartsUl)
+
+        const productImgLi = document.createElement('LI')
+        productImgLi.setAttribute('id', 'productImgLi')
+        const imageContainer = document.getElementById('detailImgSec')
+        const imageHtml = imageContainer.innerHTML
+        productImgLi.innerHTML = imageHtml
+
+        const brandNameLi = document.createElement('LI')
+        const detailBrandName = document.getElementById('detailBrandName').innerHTML
+        brandNameLi.innerHTML = detailBrandName
+
+        const productNameLi = document.createElement('LI')
+        productNameLi.setAttribute('id', 'productNameLi')
+        const detailProductName = document.getElementById('detailProductName').innerHTML
+        productNameLi.innerHTML = detailProductName
+
+        const brandNameAndProductLi = document.createElement('LI')
+        brandNameAndProductLi.appendChild(brandNameLi)
+        brandNameAndProductLi.appendChild(productNameLi)
+
+        const productPriceLi = document.createElement('LI')
+        const productDetailDiscountPrice = document.getElementById('productDetailDiscountPrice').innerHTML
+        productPriceLi.innerHTML = productDetailDiscountPrice
+
+        const span1 = document.createElement('span')
+        span1.innerHTML = "\u00d7"
+
+
+        allCartsUl.appendChild(productImgLi)
+        allCartsUl.appendChild(brandNameAndProductLi)
+        allCartsUl.appendChild(productPriceLi)
+        allCartsUl.appendChild(span1)
+
+        saveData()
+        showData()
+
+        const cartSecTotal = document.getElementById('cartSecTotal')
+        const totalPrice = document.getElementById('totalPrice')
+alert('Product Added Successfully')
+closeProductDetails()
+
+
+    }
+
+    allCartIsHere.addEventListener("click", function (e) {
+        if (e.target.tagName === "SPAN") {
+            e.target.parentElement.remove()
+        }
+        saveData()
+        showData()
+    })
+
+    function saveData() {
+        localStorage.setItem('data', allCartIsHere.innerHTML)
+    }
+
+    function showData() {
+        allCartIsHere.innerHTML = localStorage.getItem('data')
+    }
+
+    showData()
+
 </script>
 
 </html>
